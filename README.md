@@ -57,13 +57,33 @@ The project is scoped around a single core entity (tickets) so the full CRUD loo
 
 > Setup instructions will be filled in once the project scaffolding is in place.
 
-```bash
-# Backend
-cd backend
-# create virtual environment, install dependencies, configure DATABASE_URL
-uvicorn main:app --reload
+### 1. Environment variables
 
-# Frontend
+Each service has its own `.env`, based on the checked-in `.env.example` in that folder.
+
+```bash
+cd backend
+cp .env.example .env
+# fill in DATABASE_URL, etc.
+
+cd ../frontend
+cp .env.example .env
+# fill in VITE_API_URL, etc.
+```
+
+### 2. Run the backend
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate   # .venv\Scripts\activate on Windows
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+### 3. Run the frontend
+
+```bash
 cd frontend
 npm install
 npm run dev
@@ -77,14 +97,19 @@ npm run dev
 │   ├── main.py
 │   ├── models.py
 │   ├── schemas.py
-│   └── database.py
+│   ├── database.py
+│   ├── .env.example
+│   └── .env              # gitignored
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
 │   │   ├── api/
 │   │   └── types/
-│   └── vite.config.ts
+│   ├── vite.config.ts
+│   ├── .env.example
+│   └── .env              # gitignored
+├── .gitignore
 └── README.md
 ```
 
