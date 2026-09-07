@@ -1,8 +1,8 @@
 # Mini Ticket Tracker
 
-A scaled-down issue/ticket tracker — similar in spirit to Linear or Jira — built as a full-stack CRUD application with a React + TypeScript frontend and a FastAPI + PostgreSQL backend.
+A scaled-down issue/ticket tracker — similar in spirit to Linear or Jira — built as a full-stack CRUD application with a React + JavaScript frontend and a FastAPI + PostgreSQL backend.
 
-The project is scoped around a single core entity (tickets) so the full CRUD loop, a real status lifecycle, and typed data flow between frontend and backend can be built end-to-end rather than left half-finished across too many features.
+The project is scoped around a single core entity (tickets) so the full CRUD loop, a real status lifecycle, and clean data flow between frontend and backend can be built end-to-end rather than left half-finished across too many features.
 
 ## Features
 
@@ -15,7 +15,7 @@ The project is scoped around a single core entity (tickets) so the full CRUD loo
 ## Tech Stack
 
 **Frontend**
-- React + TypeScript
+- React + JavaScript
 - React Router
 - TanStack Query (React Query) for data fetching, caching, and mutation handling
 - Context API for lightweight shared UI state
@@ -104,9 +104,8 @@ npm run dev
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
-│   │   ├── api/
-│   │   └── types/
-│   ├── vite.config.ts
+│   │   └── api/
+│   ├── vite.config.js
 │   ├── .env.example
 │   └── .env              # gitignored
 ├── .gitignore
